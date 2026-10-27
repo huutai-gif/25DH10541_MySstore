@@ -1,0 +1,25 @@
+﻿
+@model _25DH10541_MySstore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AminLayout.cshtml";
+}
+
+<h2 class="bg-success">CHI TIẾT SẢN PHẨM</h2>
+
+@Html.Partial("PVProductInfo", Model)
+
+
+
+<div class="form-group">
+    <div style="margin-left: 25.5%; display: flex; gap: 6px;">
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID },
+        new { @class = "btn btn-primary" })
+
+        @Html.ActionLink("Quay lại danh sách", "Index", null,
+        new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+

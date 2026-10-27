@@ -1,0 +1,36 @@
+﻿@model IEnumerable<_25DH10541_MySstore.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AminLayout.cshtml";
+}
+
+<h2 class="bg-success">DANH SÁCH DANH MỤC SẢN PHẨM</h2>
+
+<table class="bg-info col-md-6">
+    <tr>
+        <th class="bg-success col-md-2">
+            @*@Html.DisplayNameFor(model => model.CategoryName)*@
+            TÊN DANH MỤC
+        </th>
+
+        <th class="bg-success col-md-4"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("SỬA", "Edit", new { id = item.CategoryID }, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("XÓA", "Delete", new { id = item.CategoryID }, new { @class = "btn btn-primary btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("THÊM MỚI", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
